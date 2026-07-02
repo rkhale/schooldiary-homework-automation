@@ -1,0 +1,63 @@
+# Environment and credentials
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+secrets/
+
+# Browser state and sessions
+playwright/.auth/
+playwright/.cache/
+browser-state/
+sessions/
+cookies/
+storage-state*.json
+*.har
+
+# Runtime outputs and evidence
+tmp/
+temp/
+out/
+output/
+outputs/
+artifacts/
+evidence/
+downloads/
+screenshots/
+reports/
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.zip
+
+# Logs
+logs/
+*.log
+*.out
+*.err
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.venv/
+venv/
+
+# Playwright and test reports
+playwright-report/
+test-results/
+blob-report/
+
+# IDE and OS files
+.idea/
+.vscode/
+*.code-workspace
+.DS_Store
+Thumbs.db
