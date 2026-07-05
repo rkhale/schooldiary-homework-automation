@@ -2,6 +2,9 @@
 .env
 .env.*
 !.env.example
+config/config.local.json
+config/*.private.json
+config/*.secrets.json
 .codex/config.toml
 .codex/secrets.*
 *.pem

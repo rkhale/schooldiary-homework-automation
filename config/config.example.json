@@ -1,0 +1,89 @@
+{
+  "runtime": {
+    "timezone": "Asia/Kolkata",
+    "max_notices_per_run": 20,
+    "download_attachments": true,
+    "capture_screenshot": true,
+    "post_to_n8n": true
+  },
+  "schooldiary": {
+    "base_url": "https://schooldiary.example.invalid",
+    "noticeboard_url": "https://schooldiary.example.invalid/notice-board",
+    "username_secret_ref": "<schooldiary-username-secret-ref>",
+    "password_secret_ref": "<schooldiary-password-secret-ref>",
+    "portal_label": "Synthetic SchoolDiary Portal"
+  },
+  "cloud_run": {
+    "job_name": "schooldiary-homework-fetcher",
+    "region": "asia-south1",
+    "service_account": "schooldiary-job@example-project.iam.gserviceaccount.com",
+    "scheduler_timezone": "Asia/Kolkata",
+    "attempt_timeout_seconds": 1800
+  },
+  "gcs": {
+    "bucket_name": "synthetic-schooldiary-evidence-bucket",
+    "prefix": "schooldiary/evidence-temp/",
+    "delete_after_drive_copy": false,
+    "retention_days": 14
+  },
+  "n8n": {
+    "webhook_url": "https://n8n.example.invalid/webhook/schooldiary-intake",
+    "webhook_token_secret_ref": "<n8n-webhook-token-secret-ref>",
+    "mcp_base_url": "https://n8n.example.invalid/mcp-server/http",
+    "workflow_project": "Synthetic Personal Project"
+  },
+  "google_drive": {
+    "evidence_root_folder_id": "<your-drive-folder-id>",
+    "finalize_evidence": true,
+    "create_notice_text_file": true,
+    "folder_date_basis": "posted_date",
+    "link_sharing_mode": "restricted"
+  },
+  "google_calendar": {
+    "homework_calendar_id": "<your-calendar-id>",
+    "create_events": true,
+    "default_event_type": "all_day",
+    "timezone": "Asia/Kolkata",
+    "create_for_needs_review": false,
+    "enable_reminders": false
+  },
+  "google_sheets": {
+    "tracker_sheet_id": "<your-google-sheet-id>",
+    "homework_tracker_tab": "Homework Tracker",
+    "notice_index_tab": "Notice Index",
+    "run_log_tab": "Run Log",
+    "digest_log_tab": "Daily Digest Log",
+    "config_tab": "Config"
+  },
+  "notifications": {
+    "digest_email_to": [
+      "<family-recipient@example.com>"
+    ],
+    "digest_email_cc": [],
+    "digest_email_bcc": [],
+    "operational_alert_email_to": [
+      "<admin@example.com>"
+    ],
+    "digest_send_time": "20:45",
+    "digest_timezone": "Asia/Kolkata",
+    "digest_lookahead_days": 7,
+    "digest_send_empty": false,
+    "digest_use_ai_formatting": true,
+    "digest_max_items_per_section": 10
+  },
+  "ai": {
+    "provider": "synthetic-llm-provider",
+    "model": "synthetic-model-name",
+    "classification_enabled": true,
+    "itemization_enabled": true,
+    "digest_formatting_enabled": true,
+    "api_key_secret_ref": "<ai-api-key-secret-ref>"
+  },
+  "observability": {
+    "log_level": "info",
+    "redact_sensitive_values": true,
+    "emit_structured_logs": true,
+    "send_operational_alerts": true,
+    "alert_severity_threshold": "warning"
+  }
+}
